@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.scwang.smartrefresh.header.DropboxHeader;
 import com.scwang.smartrefresh.header.FunGameBattleCityHeader;
@@ -157,6 +158,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
+
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         List<String> mList = new ArrayList<>();
 
@@ -183,9 +185,48 @@ public class MainActivity extends AppCompatActivity implements
         }
 
         @Override
-        public void onBindViewHolder(MyViewHolder holder, int position) {
+        public void onBindViewHolder(MyViewHolder holder,final int position) {
             String s = mList.get(position);
             holder.mTextView.setText(s);
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                        //切换Lottie动画
+                    Toast.makeText(MainActivity.this, "已切换Lottie动画"+(position+1), Toast.LENGTH_LONG).show();
+                        switch (position) {
+                            case 0:
+                                mRefreshLottieHeader.setAnimationViewJson("anim1.json");
+                                setHeader(mRefreshLottieHeader);
+                                headerName = "mHeaderLottie";
+                                mRefresh.autoRefresh();
+                                break;
+                            case 1:
+                                mRefreshLottieHeader.setAnimationViewJson("anim2.json");
+                                setHeader(mRefreshLottieHeader);
+                                headerName = "mHeaderLottie";
+                                mRefresh.autoRefresh();
+                                break;
+                            case 2:
+                                mRefreshLottieHeader.setAnimationViewJson("anim3.json");
+                                setHeader(mRefreshLottieHeader);
+                                headerName = "mHeaderLottie";
+                                mRefresh.autoRefresh();
+                                break;
+                            case 3:
+                                mRefreshLottieHeader.setAnimationViewJson("anim4.json");
+                                setHeader(mRefreshLottieHeader);
+                                headerName = "mHeaderLottie";
+                                mRefresh.autoRefresh();
+                                break;
+                                default:
+                                    mRefreshLottieHeader.setAnimationViewJson("anim2.json");
+                                    setHeader(mRefreshLottieHeader);
+                                    headerName = "mHeaderLottie";
+                                    mRefresh.autoRefresh();
+                                    break;
+                        }
+                    }
+            });
         }
 
         @Override

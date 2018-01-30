@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.LinearLayout;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -95,6 +96,14 @@ public class MyRefreshLottieHeader extends LinearLayout implements RefreshHeader
         View view = layoutInflater.inflate(R.layout.loading_lottie, this);
         mAnimationView = (LottieAnimationView) view.findViewById(R.id.loading_lottie);
 
+    }
+
+    public void setAnimationViewJson(String animName){
+        mAnimationView.setAnimation(animName);
+    }
+
+    public void setAnimationViewJson(Animation anim){
+        mAnimationView.setAnimation(anim);
     }
 
 }
