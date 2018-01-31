@@ -3,10 +3,12 @@ package com.wapchief.smartrefreshlottie;
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshKernel;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -14,16 +16,18 @@ import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 
 /**
- * Created by wapchief on 2018/1/29.
  * 自定义帧动画
+ * @author wapchief
+ * @date 2018/1/30
  */
-
 public class MyRefreshAnimHeader extends LinearLayout implements RefreshHeader {
 
     private ImageView mAnimationImg;
     private AnimationDrawable mAnimationDrawable;
+    Context mContext;
     public MyRefreshAnimHeader(Context context) {
         super(context);
+        this.mContext = context;
         initView(context);
     }
 
@@ -42,7 +46,7 @@ public class MyRefreshAnimHeader extends LinearLayout implements RefreshHeader {
 
     }
 
-    //注意不能为null
+    /**注意不能为null*/
     @NonNull
     @Override
     public View getView() {
@@ -95,19 +99,19 @@ public class MyRefreshAnimHeader extends LinearLayout implements RefreshHeader {
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.loading_anim, this);
         mAnimationImg = (ImageView) view.findViewById(R.id.loading_anim_img);
-        mAnimationDrawable=(AnimationDrawable) getResources().getDrawable(R.drawable.anim_loading);
+        mAnimationDrawable=(AnimationDrawable) ContextCompat.getDrawable(mContext,R.drawable.anim_loading);
         mAnimationDrawable.setOneShot(true);
         mAnimationImg.setImageDrawable(mAnimationDrawable);
     }
 
 
-    //开始
+    /**开始*/
     protected void start() {
         if (mAnimationDrawable != null && !mAnimationDrawable.isRunning()) {
             mAnimationDrawable.start();
         }
     }
-    //结束
+    /**结束*/
     protected void stop() {
         if (mAnimationDrawable != null && mAnimationDrawable.isRunning()) {
             mAnimationDrawable.stop();

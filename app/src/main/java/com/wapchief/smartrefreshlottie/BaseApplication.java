@@ -10,9 +10,10 @@ import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 
 /**
- * Created by wapchief on 2018/1/29.
+ * Base
+ * @author wapchief
+ * @date 2018/1/30
  */
-
 public class BaseApplication extends Application{
     public static BaseApplication mContent;
     @Override
@@ -22,7 +23,7 @@ public class BaseApplication extends Application{
 
     }
 
-    /*设置全局的下拉刷新样式*/
+    //设置全局的下拉刷新样式
     static {
         SmartRefreshLayout.setDefaultRefreshHeaderCreater(new DefaultRefreshHeaderCreater() {
             @NonNull

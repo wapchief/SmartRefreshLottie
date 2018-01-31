@@ -25,7 +25,10 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * @author wapchief
+ * @date 2018/1/30
+ */
 public class MainActivity extends AppCompatActivity implements
         Toolbar.OnMenuItemClickListener,OnRefreshListener{
 
@@ -33,10 +36,10 @@ public class MainActivity extends AppCompatActivity implements
     RecyclerView mRecycler;
     SmartRefreshLayout mRefresh;
     MyAdapter mAdapter;
-    //自定义header
+    /**自定义header*/
     MyRefreshLottieHeader mRefreshLottieHeader;
     MyRefreshAnimHeader mRefreshAnimHeader;
-    //Smart库中的刷新样式
+    /**Smart库中的刷新样式*/
     FunGameBattleCityHeader mBattleCityHeader;
     ClassicsHeader mClassicsHeader;
     DropboxHeader mDropboxHeader;
@@ -83,7 +86,10 @@ public class MainActivity extends AppCompatActivity implements
         mRefresh.setOnRefreshListener(this);
     }
 
-    /*设置刷新header风格*/
+    /**
+     * 设置刷新header风格
+     * @param header
+     */
     private void setHeader(RefreshHeader header) {
         if (mRefresh.isRefreshing()){
             mRefresh.finishRefresh();
@@ -91,9 +97,14 @@ public class MainActivity extends AppCompatActivity implements
         mRefresh.setRefreshHeader(header);
     }
 
-    /*item数据*/
+    /**
+     * 数据源
+     * @return Data
+     */
+    private int dataSize = 20;
     private List<String> getDatas() {
-        for (int i=0;i<20;i++) {
+        for (int i = 0; i < dataSize; i++) {
+
             mStringList.add(i + "   item");
         }
         return mStringList;
@@ -101,23 +112,27 @@ public class MainActivity extends AppCompatActivity implements
 
     private List<String> getDatas(String header) {
         mStringList.clear();
-        for (int i=0;i<20;i++) {
+        for (int i = 0; i < dataSize; i++) {
+
             mStringList.add(i + "   item    " + header);
         }
         return mStringList;
     }
 
 
-
-    /*选择器*/
+    /**
+     * Menu菜单
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
-    /*监听选项*/
-    String headerName = "";
+    /**监听选项*/
+    private String headerName = "";
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
@@ -141,11 +156,14 @@ public class MainActivity extends AppCompatActivity implements
                 headerName = "mHeaderAnim";
                 mRefresh.autoRefresh();
                 break;
+                default:
+
+                    break;
         }
         return true;
     }
 
-    /*刷新事件*/
+    /**刷新事件*/
     @Override
     public void onRefresh(RefreshLayout refreshlayout) {
         refreshlayout.getLayout().postDelayed(new Runnable() {

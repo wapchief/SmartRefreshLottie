@@ -15,10 +15,10 @@ import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 
 /**
- * Created by wapchief on 2018/1/29.
- * 结合Lottie动画
+ * Lottie动画
+ * @author wapchief
+ * @date 2018/1/30
  */
-
 public class MyRefreshLottieHeader extends LinearLayout implements RefreshHeader {
 
     LottieAnimationView mAnimationView;
@@ -42,7 +42,10 @@ public class MyRefreshLottieHeader extends LinearLayout implements RefreshHeader
 
     }
 
-    //注意不能为null
+    /**
+     * 注意不能为null
+     * @return
+     */
     @NonNull
     @Override
     public View getView() {
