@@ -13,22 +13,22 @@ SmartRefreshLayout下拉刷新+Lottie动画+自定义帧动画实现一键切换
 [自定义AnimHeader](https://github.com/wapchief/SmartRefreshLottie/blob/master/app/src/main/java/com/wapchief/smartrefreshlottie/MyRefreshAnimHeader.java)
 
 
-##一、介绍
+## 一、介绍
 
-####SmartRefreshLayout
+#### SmartRefreshLayout
 是目前使用比较广泛的一款下拉刷新和上拉加载库。实现起来非常方便，可以一键修改全局的刷新样式。而且该库已经提供了大量的刷新效果，其中包括默认的 SwipeRefresh 经典风格，以及一些高级的 比如游戏刷新、适用于聊天项目的上拉加载更多等等。
 ![](http://upload-images.jianshu.io/upload_images/2858691-23c181bc6cf5fe6a.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-####Lottie
+#### Lottie
 是 Airbnb 开源的一款动画库，该库的优势是不需要程序员自己写 Anim 而是将这些工作交给设计师处理，最后拿到到只是一个 Json 文件，通过 Lottie 加载 Json 文件就能展示出动画效果。
 [Lottie社区](https://www.lottiefiles.com/)已经提供了上千套刷新的 Json 文件，如果对定制要求不是太高，完全可以拿来用，小到点击效果，大到刷新，启动页等等。
 
 ![](http://upload-images.jianshu.io/upload_images/2858691-9de2ed8fce7121b7.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-##二、基本使用
+## 二、基本使用
 
-####SmartRefreshLayout
+#### SmartRefreshLayout
 
 * 引入依赖
 ```
@@ -109,7 +109,7 @@ public class BaseApplication extends Application{
 
 ```
 
-####Lottie
+#### Lottie
 
 * 引入依赖
 ```
