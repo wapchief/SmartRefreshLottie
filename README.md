@@ -188,6 +188,7 @@ mRefreshLottieHeader.setAnimationViewJson("anim2.json");
 ```
 
 
+
 ------
 
 > Demo地址：https://github.com/wapchief/SmartRefreshLottie
