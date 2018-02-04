@@ -16,12 +16,22 @@ import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 
 /**
  * Lottie动画
+ *
  * @author wapchief
- * @date 2018/1/30
+ * @date 2018 /1/30
  */
 public class MyRefreshLottieHeader extends LinearLayout implements RefreshHeader {
 
+    /**
+     * The M animation view.
+     */
     LottieAnimationView mAnimationView;
+
+    /**
+     * Instantiates a new My refresh lottie header.
+     *
+     * @param context the context
+     */
     public MyRefreshLottieHeader(Context context) {
         super(context);
         initView(context);
@@ -98,13 +108,22 @@ public class MyRefreshLottieHeader extends LinearLayout implements RefreshHeader
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.loading_lottie, this);
         mAnimationView = (LottieAnimationView) view.findViewById(R.id.loading_lottie);
-
     }
 
+    /**
+     * Set animation view json.
+     *
+     * @param animName json文件名
+     */
     public void setAnimationViewJson(String animName){
         mAnimationView.setAnimation(animName);
     }
 
+    /**
+     * Set animation view json.
+     *
+     * @param anim the anim
+     */
     public void setAnimationViewJson(Animation anim){
         mAnimationView.setAnimation(anim);
     }

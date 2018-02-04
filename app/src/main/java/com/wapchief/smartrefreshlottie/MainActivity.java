@@ -26,8 +26,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * The type Main activity.
  * @author wapchief
- * @date 2018/1/30
+ * @date 2018 /1/30
  */
 public class MainActivity extends AppCompatActivity implements
         Toolbar.OnMenuItemClickListener,OnRefreshListener{
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements
      * 数据源
      * @return Data
      */
-    private int dataSize = 20;
+    private int dataSize = 4;
     private List<String> getDatas() {
         for (int i = 0; i < dataSize; i++) {
 
@@ -109,6 +110,8 @@ public class MainActivity extends AppCompatActivity implements
         }
         return mStringList;
     }
+
+
 
     private List<String> getDatas(String header) {
         mStringList.clear();
