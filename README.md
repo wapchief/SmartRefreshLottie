@@ -13,5 +13,6 @@ SmartRefreshLayout下拉刷新+Lottie动画+自定义帧动画实现一键切换
 [自定义AnimHeader](https://github.com/wapchief/SmartRefreshLottie/blob/master/app/src/main/java/com/wapchief/smartrefreshlottie/MyRefreshAnimHeader.java)
 
 
+#### 说明文档
 
 [SmartRefresh结合Lottie实现一行代码切换下拉刷新动画](https://www.jianshu.com/p/e4e8a41a75b6)
